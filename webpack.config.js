@@ -5,8 +5,8 @@ var path = require('path');
 module.exports = {
   entry: {
     // example: 'index.ts'
-    mailbox: 'mailbox/mailbox.ts' // ,
-    // todo: 'todo.ts',
+    mailbox: 'mailbox/mailbox.ts',
+    todo: 'todo/todo.ts'
     // uitest: 'uitest.ts'
   },
   output: {
