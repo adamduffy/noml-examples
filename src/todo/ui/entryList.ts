@@ -15,19 +15,17 @@ export class EntryList extends ui.Component<Logic, void> {
     return this;
   }
 
-  getMessage(data: Entry[], id: string): string {
-    let entry = data.find(e => e.id === id);
-    return entry ? entry.message : '';
-  }
-
   getBody() {
     const {entries, logic} = this;
     const selectedId = logic.getSelectedEntry();
-    let ids: string[] = [];
-    entries.forEach(entry => ids.push(entry.id));
-    return new ui.Listbox(selectedId, ids, id => this.getMessage(entries, id))
+    const items = Array.from(entries, entry => ({
+      id: entry.id,
+      text: entry.message,
+      selected: (entry.id === selectedId)
+    }));
+    return new ui.Listbox(items)
       .size(5)
-      .onChange(e => logic.selectEntry(e.target.value));
+      .onValueChanged(v => logic.selectEntry(v));
   }
 
 }

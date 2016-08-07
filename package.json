@@ -30,7 +30,7 @@
     "whatwg-fetch": "^1.0.0"
   },
   "dependencies": {
-    "noml": "^1.0.9",
+    "noml": "^1.0.10",
     "whatwg-fetch": "^1.0.0"
   }
 }
